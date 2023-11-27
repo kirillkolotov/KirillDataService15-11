@@ -42,7 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDB.cs" />
+    <Compile Include="LanguageDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDB.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modle\Model.csproj">
+      <Project>{ed5aa0e3-2935-482c-9bfc-09204e052db9}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KirillDB.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
