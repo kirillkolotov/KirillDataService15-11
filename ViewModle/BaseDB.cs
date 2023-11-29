@@ -25,7 +25,7 @@ namespace ViewModel
             if (connectionString == null)
             {
                 connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
-                    Path() + @"\SchoolDB.accdb;Persist Security Info=True";
+                    Path() + @"\KirillDB.accdb;Persist Security Info=True";
             }
             connection = new OleDbConnection(connectionString);
             command = new OleDbCommand();

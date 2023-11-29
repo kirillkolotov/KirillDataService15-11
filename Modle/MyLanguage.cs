@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-   // [EnumMember]
+    [DataContract(Name = "Level")]
     public enum Level
     {
-        [EnumMember] Low,
-        [EnumMember] Medium,
-        [EnumMember] High,
-        [EnumMember] Top
+        [EnumMember] student,
+        [EnumMember] basic,
+        [EnumMember] speaker,
+        [EnumMember] teacher
     }
     [DataContract]
     public class MyLanguage:BaseEntity
