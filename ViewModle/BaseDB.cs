@@ -22,6 +22,8 @@ namespace ViewModel
         protected static string connectionString;
         public BaseDB()
         {
+            //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\gold\Documents\kirill\ViewModel\KirillDB.accdb;Persist Security Info=True
+            //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\gold\Documents\kirill\ViewModle\KirillDB.accdb;Persist Security Info=True
             if (connectionString == null)
             {
                 connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +

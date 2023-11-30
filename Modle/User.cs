@@ -17,7 +17,6 @@ namespace Model
         protected string username;
         protected string password;
 
-        [DataMember] public Language Language { get {return language; } set {value = language; } }
         [DataMember] public string Firstname { get {return firstname; } set { value = firstname; } }
         [DataMember] public string Lastname { get {return lastname; } set { value = lastname; } }
         [DataMember] public string Email { get {return email; } set { value = email; } }

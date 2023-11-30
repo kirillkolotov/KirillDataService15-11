@@ -38,37 +38,49 @@ namespace ViewModel
             command.Parameters.AddWithValue("@language", myLanguage.Language);
             command.Parameters.AddWithValue("@id", myLanguage.Id);
         }
-        public LanguageList SelectAll()
+        public MyLanguageList SelectAll()
         {
             command.CommandText = "SELECT * FROM TblMyLanguage";
-            LanguageList list = new LanguageList(base.ExecuteCommand());
+            MyLanguageList list = new MyLanguageList(base.ExecuteCommand());
+            return list;
+        }
+        public MyLanguageList SelectByUser(User user)
+        {
+            command.CommandText = "SELECT * FROM TblMyLanguage WHERE user=" + user.Id;
+            MyLanguageList list = new MyLanguageList(base.ExecuteCommand());
+            return list;
+        }
+        public MyLanguageList SelectByLanguage(Language language)
+        {
+            command.CommandText = "SELECT * FROM TblMyLanguage WHERE language=" + language.Id;
+            MyLanguageList list = new MyLanguageList(base.ExecuteCommand());
             return list;
         }
         public MyLanguage SelectById(int id)
         {
             command.CommandText = "SELECT * FROM TblMyLanguage WHERE id=" + id;
-            ChatList list = new ChatList(base.ExecuteCommand());
+            MyLanguageList list = new MyLanguageList(base.ExecuteCommand());
             if (list.Count == 0)
                 return null;
             return list[0];
         }
-        public int Insert(Chat chat)
+        public int Insert(MyLanguage myLanguage)
         {
             command.CommandText = "INSERT INTO TblMyLanguage (level,user,language) VALUES (@level,@user,@language)";
-            LoadParameters(chat);
+            LoadParameters(myLanguage);
             return ExecuteCRUD();
         }
-        public int Update(Chat chat)
+        public int Update(MyLanguage myLanguage)
         {
             command.CommandText = "UPDATE TblMyLanguage SET level = @level,user = @user,language = @language WHERE id = @id";
-            LoadParameters(chat);
+            LoadParameters(myLanguage);
             return ExecuteCRUD();
         }
-        public int Delete(Chat chat)
+        public int Delete(MyLanguage myLanguage)
 
         {
             command.CommandText = "DELETE FROM TblMyLanguage WHERE id =@id";
-            LoadParameters(chat);
+            LoadParameters(myLanguage);
             return ExecuteCRUD();
         }
     }

@@ -42,6 +42,13 @@ namespace ViewModel
             ChatList list = new ChatList(base.ExecuteCommand());
             return list;
         }
+        public ChatList SelectChat(User user1, User user2)
+        {
+            command.CommandText = $"SELECT * FROM TblChat WHERE (sender = {user1.Id} AND recvier = {user2.Id} " +
+                $" OR (sender = {user2.Id} AND recvier ={user1.Id})";
+            ChatList list = new ChatList(base.ExecuteCommand());
+            return list;
+        }
         public Chat SelectById(int id)
         {
             command.CommandText = "SELECT * FROM TblChat WHERE id=" + id;

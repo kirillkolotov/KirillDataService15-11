@@ -28,7 +28,7 @@ namespace Model
 
     }
     [CollectionDataContract]
-    public class MyLanguageList : List<MyLanguage>
+    public class MyLanguageList: List<MyLanguage>
     {
         public MyLanguageList() { } // default c'tor with empty list
 

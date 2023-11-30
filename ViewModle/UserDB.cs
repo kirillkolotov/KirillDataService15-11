@@ -50,6 +50,14 @@ namespace ViewModel
                 return null;
             return list[0];
         }
+        public User Login(User user)
+        {
+            command.CommandText = $"SELECT * FROM TblUsers WHERE username='{user.Username}' AND [password]='{user.Password}'";
+            UserList list = new UserList(base.ExecuteCommand());
+            if (list.Count == 0)
+                return null;
+            return list[0];
+        }
         public int Insert(User user)
         {
             command.CommandText = "INSERT INTO TblUsers (firstname,lastname,email,username,password) VALUES (@firstname,@lastname,@email,@username,@password)";
