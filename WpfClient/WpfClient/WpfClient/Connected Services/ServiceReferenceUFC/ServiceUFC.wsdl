@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServiceUFC" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceUFC/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceUFC/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceUFC/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceUFC_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_FindUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUsername" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_FindUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_GetAllCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountries" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_GetAllCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewCountry" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCountry" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCountry" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_GetAllDivisions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDivisions" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_GetAllDivisions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDivisionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewDivision_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewDivision" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewDivision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateDivision_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDivision" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateDivision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteDivision_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDivision" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteDivision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_GetAllFighters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFighters" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_GetAllFighters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFightersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewFighter_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewFighter" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_NewFighter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewFighterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateFighter_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFighter" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_UpdateFighter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFighterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteFighter_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFighter" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUFC_DeleteFighter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFighterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceUFC">
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/GetAllUsers" message="tns:IServiceUFC_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/GetAllUsersResponse" message="tns:IServiceUFC_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/NewUser" message="tns:IServiceUFC_NewUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/NewUserResponse" message="tns:IServiceUFC_NewUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/UpdateUser" message="tns:IServiceUFC_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/UpdateUserResponse" message="tns:IServiceUFC_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/DeleteUser" message="tns:IServiceUFC_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/DeleteUserResponse" message="tns:IServiceUFC_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/Login" message="tns:IServiceUFC_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/LoginResponse" message="tns:IServiceUFC_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/FindUsername" message="tns:IServiceUFC_FindUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/FindUsernameResponse" message="tns:IServiceUFC_FindUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/GetAllCountries" message="tns:IServiceUFC_GetAllCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/GetAllCountriesResponse" message="tns:IServiceUFC_GetAllCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/NewCountry" message="tns:IServiceUFC_NewCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/NewCountryResponse" message="tns:IServiceUFC_NewCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/UpdateCountry" message="tns:IServiceUFC_UpdateCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/UpdateCountryResponse" message="tns:IServiceUFC_UpdateCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/DeleteCountry" message="tns:IServiceUFC_DeleteCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/DeleteCountryResponse" message="tns:IServiceUFC_DeleteCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDivisions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/GetAllDivisions" message="tns:IServiceUFC_GetAllDivisions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/GetAllDivisionsResponse" message="tns:IServiceUFC_GetAllDivisions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewDivision">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/NewDivision" message="tns:IServiceUFC_NewDivision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/NewDivisionResponse" message="tns:IServiceUFC_NewDivision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDivision">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/UpdateDivision" message="tns:IServiceUFC_UpdateDivision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/UpdateDivisionResponse" message="tns:IServiceUFC_UpdateDivision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDivision">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/DeleteDivision" message="tns:IServiceUFC_DeleteDivision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/DeleteDivisionResponse" message="tns:IServiceUFC_DeleteDivision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFighters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/GetAllFighters" message="tns:IServiceUFC_GetAllFighters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/GetAllFightersResponse" message="tns:IServiceUFC_GetAllFighters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewFighter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/NewFighter" message="tns:IServiceUFC_NewFighter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/NewFighterResponse" message="tns:IServiceUFC_NewFighter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFighter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/UpdateFighter" message="tns:IServiceUFC_UpdateFighter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/UpdateFighterResponse" message="tns:IServiceUFC_UpdateFighter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFighter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUFC/DeleteFighter" message="tns:IServiceUFC_DeleteFighter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUFC/DeleteFighterResponse" message="tns:IServiceUFC_DeleteFighter_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceUFC" type="tns:IServiceUFC">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/NewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUsername">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/FindUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountries">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/GetAllCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCountry">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/NewCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCountry">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/UpdateCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCountry">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/DeleteCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDivisions">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/GetAllDivisions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDivision">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/NewDivision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDivision">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/UpdateDivision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDivision">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/DeleteDivision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFighters">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/GetAllFighters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewFighter">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/NewFighter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFighter">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/UpdateFighter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFighter">
+      <soap:operation soapAction="http://tempuri.org/IServiceUFC/DeleteFighter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceUFC">
+    <wsdl:port name="BasicHttpBinding_IServiceUFC" binding="tns:BasicHttpBinding_IServiceUFC">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/ServiceModel/ServiceUFC/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

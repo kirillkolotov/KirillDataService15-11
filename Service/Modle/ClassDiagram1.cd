@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Model.BaseEntity" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Chat" Collapsed="true">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAEAAAABAAAAAAAAAAAAAAAAAAAAIAAAACAAIAAA=</HashCode>
+      <FileName>Chat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.ChatList" Collapsed="true">
+    <Position X="8.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Chat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.Language" Collapsed="true">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAMAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Language.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.LanguageList" Collapsed="true">
+    <Position X="10" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Language.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.MyLanguage" Collapsed="true">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAgBAAAAAQAAAAEAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>MyLanguage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.MyLanguageList" Collapsed="true">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyLanguage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.User" Collapsed="true">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAChAAAAoAQAAAAEACAAAAAgCAAAAAgAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Model.UserList" Collapsed="true">
+    <Position X="11.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Model.Level" Collapsed="true">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAACAAAAAAAAAAAAIAAAAABAAA=</HashCode>
+      <FileName>MyLanguage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
