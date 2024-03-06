@@ -16,314 +16,353 @@
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
     <Window.Resources>
-        <Style TargetType="PasswordBox"
-               BasedOn="{StaticResource MaterialDesignPasswordBox}">
-            <Setter Property="FontSize"
-                    Value="20" />
-            <Setter Property="FontFamily"
-                    Value="Montserrat" />
-            <Setter Property="Foreground"
-                    Value="White" />
-            <Setter Property="MinWidth"
-                    Value="200" />
-            <Setter Property="Margin"
-                    Value="0 5" />
-        </Style>
-        <Style TargetType="TextBox"
-               BasedOn="{StaticResource MaterialDesignTextBox}">
-            <Setter Property="FontSize"
-                    Value="20" />
-            <Setter Property="MinWidth"
-                    Value="200" />
-            <Setter Property="Margin"
-                    Value="0 5" />
-            <Setter Property="Foreground"
-                    Value="White" />
-            <Setter Property="Validation.ErrorTemplate">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <StackPanel Orientation="Horizontal"
-                                    VerticalAlignment="Center">
-                            <TextBlock FontSize="25"
-                                       Foreground="Red"
-                                       Text="!" />
-                            <AdornedElementPlaceholder x:Name="placeholder" />
-                            <TextBlock FontSize="15"
-                                       FontStyle="Italic"
-                                       Foreground="Red"
-                                       Text="{Binding ElementName=placeholder, 
-             Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" />
-                        </StackPanel>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="Validation.HasError"
-                         Value="true">
-                    <Setter Property="ToolTip"
-                            Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyStyleDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="PasswordBox"
+                   BasedOn="{StaticResource MaterialDesignPasswordBox}">
+                <Setter Property="FontSize"
+                        Value="20" />
+                <Setter Property="FontFamily"
+                        Value="Montserrat" />
+                <Setter Property="Foreground"
+                        Value="White" />
+                <Setter Property="MinWidth"
+                        Value="200" />
+                <Setter Property="Margin"
+                        Value="0 5" />
+            </Style>
+            <Style TargetType="TextBox"
+                   BasedOn="{StaticResource MaterialDesignTextBox}">
+                <Setter Property="FontSize"
+                        Value="20" />
+                <Setter Property="MinWidth"
+                        Value="200" />
+                <Setter Property="Margin"
+                        Value="0 5" />
+                <Setter Property="Foreground"
+                        Value="White" />
+                <Setter Property="BorderBrush"
+                        Value="White" />
+                <Setter Property="FontWeight"
+                        Value="Medium" />
+                <Setter Property="FontFamily"
+                        Value="Montserrat" />
+                <Setter Property="Foreground"
+                        Value="White" />
+                <Setter Property="CaretBrush"
+                        Value="LightGray" />
+                <Setter Property="BorderBrush"
+                        Value="DarkGray" />
+                <Setter Property="BorderThickness"
+                        Value="0,0,0,2" />
+                <Setter Property="Height"
+                        Value="28" />
+                <Setter Property="VerticalContentAlignment"
+                        Value="Center" />
+                <Setter Property="Margin"
+                        Value="0,5,0,0" />
+                <Setter Property="Padding"
+                        Value="20,0,0,0" />
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError"
+                             Value="true">
+                        <Setter Property="Foreground"
+                                Value="Red" />
+                        <Setter Property="BorderBrush"
+                                Value="Red" />
+                        <Setter Property="ToolTip"
+                                Value="{Binding RelativeSource={x:Static RelativeSource.Self},
   Path=(Validation.Errors)[0].ErrorContent}" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="StackPanel">
-            <Setter Property="Orientation"
-                    Value="Horizontal" />
-            <Setter Property="VerticalAlignment"
-                    Value="Center" />
-            <Setter Property="HorizontalAlignment"
-                    Value="Left" />
-            <Setter Property="Margin"
-                    Value="50 0" />
-        </Style>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="StackPanel">
+                <Setter Property="Orientation"
+                        Value="Horizontal" />
+                <Setter Property="VerticalAlignment"
+                        Value="Center" />
+                <Setter Property="HorizontalAlignment"
+                        Value="Left" />
+                <Setter Property="Margin"
+                        Value="50 0" />
+            </Style>
+        </ResourceDictionary>
     </Window.Resources>
-    <Border CornerRadius="12">
-        <Border.Background>
-            <ImageBrush ImageSource="/Images/bg.jpg"
-                        Stretch="None" />
-        </Border.Background>
-        <Border CornerRadius="10"
-                BorderThickness="2"
-                Opacity="0.95">
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0"
-                                     EndPoint="1,1">
-                    <GradientStop Color="#462AD8"
-                                  Offset="0" />
-                    <GradientStop Color="#FF560B20"
-                                  Offset="0.75" />
-                    <GradientStop Color="#FFEC6B10"
-                                  Offset="1" />
-                </LinearGradientBrush>
-            </Border.BorderBrush>
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,1"
-                                     EndPoint="1,0"
-                                     Opacity="0.85">
-                    <GradientStop Color="#FFCE1E1E"
-                                  Offset="0" />
-                    <GradientStop Color="#1B1448"
-                                  Offset="1" />
-                </LinearGradientBrush>
-            </Border.Background>
+    <Border  Style="{DynamicResource MainBorder}">
+        <Border Style="{DynamicResource SecondBorder}">
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="25" />
-                        <ColumnDefinition Width="25" />
-                        <ColumnDefinition Width="5" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="SIGN UP"
-                               Foreground="DarkGray"
-                               FontSize="10"
-                               FontFamily="Montserrat"
-                               Grid.Column="0"
-                               VerticalAlignment="Center"
-                               Margin="10,0,0,0" />
-                    <Button x:Name="btnMinimize"
-                            BorderThickness="0"
-                            Content="-"
-                            Foreground="White"
-                            FontSize="16"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            Grid.Column="1"
-                            Click="btnMinimize_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background"
-                                        Value="#28AEED" />
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver"
-                                             Value="True">
-                                        <Setter Property="Background"
-                                                Value="#278BEF" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18"
-                                        Height="18"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center" />
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button x:Name="btnClose"
-                            BorderThickness="0"
-                            Content="X"
-                            Foreground="White"
-                            FontSize="12"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            Grid.Column="2"
-                            Click="btnClose_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background"
-                                        Value="#DA34AE" />
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver"
-                                             Value="True">
-                                        <Setter Property="Background"
-                                                Value="#C62DAE" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18"
-                                        Height="18"
-                                        CornerRadius="9"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center" />
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="SIGN UP"
+                           Foreground="DarkGray"
+                           FontSize="10"
+                           FontFamily="Montserrat"
+                           Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Margin="10,0,0,0" />
+                <Button x:Name="btnMinimize"
+                        BorderThickness="0"
+                        Content="-"
+                        Foreground="White"
+                        FontSize="16"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        Grid.Column="1"
+                        Click="btnMinimize_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background"
+                                    Value="#28AEED" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="#278BEF" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18"
+                                    Height="18"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="btnClose"
+                        BorderThickness="0"
+                        Content="X"
+                        Foreground="White"
+                        FontSize="12"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        Grid.Column="2"
+                        Click="btnClose_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background"
+                                    Value="#DA34AE" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="#C62DAE" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18"
+                                    Height="18"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            <StackPanel Width="500"
+                        Grid.Row="1"
+                        Orientation="Vertical"
+                        Margin="150,0,0,0">
+                <Image Source="/Images/logo.png"
+                       Width="100"
+                       Height="100" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1"
+                                Orientation="Vertical">
+                        <TextBlock Text="First Name"
+                                   Foreground="DarkGray"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Montserrat"
+                                   Margin="0,0,0,0" />
+                        <TextBox x:Name="FirstNameTextBox">
+                            <Binding Path="Firstname"
+                                     ValidatesOnDataErrors="True"
+                                     UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local:ValidFirstname min="2"
+                                                          max="15" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/user-icon.png"
+                                            Stretch="None"
+                                            AlignmentX="Left" />
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2"
+                                Orientation="Vertical">
+                        <TextBlock Text="Last Name"
+                                   Foreground="DarkGray"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Montserrat"
+                                   Margin="0,0,0,0" />
+                        <TextBox x:Name="LastnameTextBox">
+                            <Binding Path="Lastname"
+                                     ValidatesOnDataErrors="True"
+                                     UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local:ValidFirstname />
+                                </Binding.ValidationRules>
+                            </Binding>
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/user-icon.png"
+                                            Stretch="None"
+                                            AlignmentX="Left" />
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3"
+                                Orientation="Vertical">
+                        <TextBlock Text="Email"
+                                   Foreground="DarkGray"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Montserrat"
+                                   Margin="0,0,0,0" />
+                        <TextBox x:Name="EmailTextBox">
+                            <Binding Path="Email"
+                                     ValidatesOnDataErrors="True"
+                                     UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local:ValidEmail />
+                                </Binding.ValidationRules>
+                            </Binding>
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/user-icon.png"
+                                            Stretch="None"
+                                            AlignmentX="Left" />
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4"
+                                Orientation="Vertical">
+                        <TextBlock Text="Username"
+                                   Foreground="DarkGray"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Montserrat"
+                                   Margin="0,0,0,0" />
+                        <TextBox x:Name="UsernameTextBox">
+                            <Binding Path="Username"
+                                     ValidatesOnDataErrors="True"
+                                     UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <local:ValidUsername />
+                                </Binding.ValidationRules>
+                            </Binding>
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/user-icon.png"
+                                            Stretch="None"
+                                            AlignmentX="Left" />
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5"
+                                Orientation="Vertical">
+                        <TextBlock Text="Password"
+                                   Foreground="DarkGray"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Montserrat"
+                                   Margin="0,0,0,0" />
+                        <PasswordBox x:Name="PasswordTextBox"
+                                     PasswordChanged="PasswordTextBox_PasswordChanged">
+                            <PasswordBox.Background>
+                                <ImageBrush ImageSource="/Images/key-icon.png"
+                                            Stretch="None"
+                                            AlignmentX="Left" />
+                            </PasswordBox.Background>
+                        </PasswordBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6"
+                                Orientation="Vertical">
+                        <TextBlock Text="Reapet Password"
+                                   Foreground="DarkGray"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Montserrat"
+                                   Margin="0,0,0,0" />
+                        <PasswordBox x:Name="ReapetPasswordTextBox"
+                                     PasswordChanged="ReapetPasswordTextBox_PasswordChanged">
+                            <PasswordBox.Background>
+                                <ImageBrush ImageSource="/Images/key-icon.png"
+                                            Stretch="None"
+                                            AlignmentX="Left" />
+                            </PasswordBox.Background>
+                        </PasswordBox>
+                    </StackPanel>
                 </Grid>
-                <StackPanel Width="500"
-                            Grid.Row="1"
-                            Orientation="Vertical"
-                            Margin="35,20,0,0">
-                    <Image Source="/Images/logo.png"
-                           Width="100"
-                           Height="100" />
-                    <TextBlock Text="RJ CODE"
-                               Foreground="White"
-                               FontSize="25"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               HorizontalAlignment="Center" />
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="1">
-                            <TextBox x:Name="FirstNameTextBox"
-                                     materialDesign:HintAssist.Hint="first name"
-                                     materialDesign:HintAssist.HelperText="Insert your firstname here">
-                                <Binding Path="Firstname"
-                                         ValidatesOnDataErrors="True"
-                                         UpdateSourceTrigger="PropertyChanged">
-                                    <Binding.ValidationRules>
-                                        <local:ValidFirstname min="2"
-                                                              max="15" />
-                                    </Binding.ValidationRules>
-                                </Binding>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Grid.Row="2">
-                            <TextBox x:Name="LastnameTextBox"
-                                     materialDesign:HintAssist.Hint="last name"
-                                     materialDesign:HintAssist.HelperText="Insert your lastname here">
-                                <Binding Path="Lastname"
-                                         ValidatesOnDataErrors="True"
-                                         UpdateSourceTrigger="PropertyChanged">
-                                    <Binding.ValidationRules>
-                                        <local:ValidFirstname />
-                                    </Binding.ValidationRules>
-                                </Binding>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Grid.Row="3">
-                            <TextBox x:Name="EmailTextBox"
-                                     materialDesign:HintAssist.Hint="Email"
-                                     materialDesign:HintAssist.HelperText="Insert your firstname here">
-                                <Binding Path="Email"
-                                         ValidatesOnDataErrors="True"
-                                         UpdateSourceTrigger="PropertyChanged">
-                                    <Binding.ValidationRules>
-                                        <local:ValidEmail />
-                                    </Binding.ValidationRules>
-                                </Binding>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Grid.Row="4"
-                                    Orientation="Horizontal"
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Left">
-                            <TextBox x:Name="UsernameTextBox"
-                                     materialDesign:HintAssist.Hint="Username"
-                                     materialDesign:HintAssist.HelperText="Insert your firstname here">
-                                <Binding Path="Username"
-                                         ValidatesOnDataErrors="True"
-                                         UpdateSourceTrigger="PropertyChanged">
-                                    <Binding.ValidationRules>
-                                        <local:ValidUsername />
-                                    </Binding.ValidationRules>
-                                </Binding>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Grid.Row="5">
-                            <PasswordBox x:Name="PasswordTextBox"
-                                         PasswordChanged="PasswordTextBox_PasswordChanged"
-                                         materialDesign:HintAssist.Hint="Password"
-                                         materialDesign:HintAssist.HelperText="Insert your firstname here" />
-                        </StackPanel>
-                        <StackPanel Grid.Row="6">
-                            <PasswordBox x:Name="ReapetPasswordTextBox"
-                                         PasswordChanged="ReapetPasswordTextBox_PasswordChanged"
-                                         materialDesign:HintAssist.Hint="Reapet Password"
-                                         materialDesign:HintAssist.HelperText="Reapet your password here" />
-                        </StackPanel>
-                    </Grid>
-                    <Button x:Name="btnLogin"
-                            BorderThickness="0"
-                            Content="SIGN UP"
-                            Foreground="White"
-                            FontSize="12"
-                            FontFamily="Montserrat"
-                            Cursor="Hand"
-                            Margin="0,20,0,0"
-                            Click="btnSignup_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background"
-                                        Value="#FFBD1C1C" />
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver"
-                                             Value="True">
-                                        <Setter Property="Background"
-                                                Value="#28AEED" />
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150"
-                                        Height="40"
-                                        CornerRadius="20"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center" />
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
+                <Button x:Name="btnLogin"
+                        BorderThickness="0"
+                        Content="SIGN UP"
+                        Foreground="White"
+                        FontSize="12"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        Margin="0,20,0,0"
+                        Click="btnSignup_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background"
+                                    Value="#FFBD1C1C" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+                                    <Setter Property="Background"
+                                            Value="#28AEED" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
             </Grid>
         </Border>
     </Border>

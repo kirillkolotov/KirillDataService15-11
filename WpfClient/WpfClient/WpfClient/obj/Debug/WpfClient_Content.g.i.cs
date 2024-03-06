@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logomma.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gifs/gif.gif")]
 
 

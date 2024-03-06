@@ -5,33 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient"
         mc:Ignorable="d"
+        Title="WindowFighter"
+        Height="550"
+        Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="SingleBorderWindow"
-        Title="WindowFighter" Height="650" Width="700">
+        Background="Transparent"
+        AllowsTransparency="True">
     <Window.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="35" />
-            <Setter Property="FontStyle" Value="Oblique" />
-        </Style>
-        
-        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyStyleDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="Margin" Value="0 10 0 0" />
+            </Style>
+        </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Image x:Name="image" Source="/Images/PEREIRA_ALEX.png" Grid.Column="0"/>
-        <StackPanel Grid.Column="1" >
-            <TextBlock x:Name="tbNickName" Text="{Binding Nickname}" />
-            <TextBlock x:Name="tbFullName" Text="{Binding Name}"/>
-            <TextBlock x:Name="tbAge" />
-            <TextBlock x:Name="tbHeight" Text="{Binding Height}"/>
-            <TextBlock x:Name="tbReach" Text="{Binding Reach}"/>
-            <TextBlock x:Name="tbCountry"
-                       Text="{Binding Country.CountryName}"/>
-            <TextBlock x:Name="tbFightingStyle"
-                       Text="{Binding FightingStyle}" />
-        </StackPanel>
-    </Grid>
+    <Border Style="{DynamicResource MainBorder}">
+        <Border Style="{DynamicResource SecondBorder}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="25" />
+                        <ColumnDefinition Width="5" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnMinimize"
+                            Style="{DynamicResource btnMinimize}"
+                            Grid.Column="1"
+                            Click="btnMinimize_Click" />
+                    <Button x:Name="btnClose"
+                            Style="{DynamicResource btnClose}"
+                            Grid.Column="2"
+                            Click="btnClose_Click" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="image"                           
+                           Grid.Column="0" />
+                    <StackPanel Grid.Column="1">
+                        <TextBlock x:Name="tbNickName"
+                                   Text="{Binding Nickname}" />
+                        <TextBlock x:Name="tbFullName"
+                                   Text="{Binding Name}" />
+                        <TextBlock x:Name="tbAge" />
+                        <TextBlock x:Name="tbHeight"
+                                   Text="{Binding Height,StringFormat={}Height {0} cm }" />
+                        <TextBlock x:Name="tbReach"
+                                   Text="{Binding Reach}" />
+                        <TextBlock x:Name="tbCountry"
+                                   Text="{Binding Country.CountryName}" />
+                        <TextBlock x:Name="tbFightingStyle"
+                                   Text="{Binding FightingStyle,StringFormat={}🥷 {0}}" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

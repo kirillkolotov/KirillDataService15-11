@@ -24,7 +24,7 @@ namespace WpfClient
         {
             InitializeComponent();
             this.DataContext = fighter;
-            tbAge.Text=(DateTime.Today.Year-fighter.Age.Year).ToString();
+            tbAge.Text="Age "+(DateTime.Today.Year-fighter.Age.Year).ToString();
             try
             {
                 image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/Fighters/"+fighter.Name+".png"));
@@ -34,6 +34,20 @@ namespace WpfClient
                 image.Source = new BitmapImage(new Uri(@"pack://application:,,,/images/logo.png"));
             }
 
+        }
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }
